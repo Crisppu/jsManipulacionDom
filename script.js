@@ -1,5 +1,5 @@
 
-const btn = document.querySelector("[data-form-btn]"); //seleccionamos el boton agregar
+const btn = document.querySelector("[data-form-btn]"); //seleccionamos el boton agregar, le estoy diciendo al programa donde ara click el usuario
 console.log(btn)
 /*
 cuando el usuario haga click en el boton agregara se ejecutara  la siguiente funcion
@@ -19,11 +19,42 @@ btn.addEventListener("click", function(evento){
 //     console.log(input.value)
 // });
 
+/*clase 03 */
 // funcion anónima (arrow functions)
-const createTask = (evento)=>{
-evento.preventDefault();
-const input = document.querySelector('[data-form-input]');
-console.log(input.value);
+// const createTask = (evento)=>{
+// evento.preventDefault(); //evita que recargue la pagina
+// const input = document.querySelector('[data-form-input]');
+// const value = input.value;//obtiene el contenido dentro del intup
+// const task = document.querySelector('[data-task]');
+// input.value = ""; // nos limpia el input
+// //copiamos y pegamos el codigo de nuestro index.html para hacer la modificacion de lo que llena value
+// const contenido = `<div>
+// <i class="far fa-check-square icon"></i>
+// <span class="task">${value}</span>
+// </div> <i class="fas fa-trash-alt trashIcon icon"></i>`
+// task.innerHTML = contenido; //con esta instruccion le decimos que se  ubique en donde esta data-task y me coloque el contenido html
+// };
+
+// btn.addEventListener('click', createTask);
+
+/*clase04 */
+// funcion anónima (arrow functions)
+const createTask = (evento) => {
+    evento.preventDefault(); //evita que recargue la pagina
+    const input = document.querySelector("[data-form-input]");
+    const value = input.value; //obtiene el contenido dentro del intup
+    const list = document.querySelector("[data-list]")// estamos ubicados en la etiqueta ul
+    const task = document.createElement('li'); //hacemos que se cree un elemento li en html
+    task.classList.add("card"); //agregamos los estilos del css class="card"
+    input.value = ""; // nos limpia el input
+    //copiamos y pegamos el codigo de nuestro index.html para hacer la modificacion de lo que llena value
+    const contenido = `<div>
+<i class="far fa-check-square icon"></i>
+<span class="task">${value}</span>
+</div> <i class="fas fa-trash-alt trashIcon icon"></i>`;
+    task.innerHTML = contenido; //con esta instruccion le decimos que se  ubique en donde esta data-task y me coloque el contenido html
+list.appendChild(task);
+    console.log(contenido)
 };
 
-btn.addEventListener('click', createTask);
+btn.addEventListener("click", createTask);
