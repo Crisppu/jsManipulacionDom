@@ -1,5 +1,9 @@
+
+import checkComplete from "./components/checkComplete.js";
+import deleteIcon from "./components/deleteIcon.js";
 //esta funcion nos permite que nuestro codigo se animo - immediately invoked function expression IIFE
 ( () => {
+
 const btn = document.querySelector("[data-form-btn]"); //seleccionamos el boton agregar, le estoy diciendo al programa donde ara click el usuario
 //console.log(btn)
 /*
@@ -91,20 +95,26 @@ const createTask = (evento) => {
   // 
   // <i class="fas fa-trash-alt trashIcon icon"></i>`;
 
-  const contenido = `
+  //const contenido = `
+ //<i class="fas fa-trash-alt trashIcon icon"></i>`;
 
-
- <i class="fas fa-trash-alt trashIcon icon"></i>`;
   // task.innerHTML = contenido; //con esta instruccion le decimos que se  ubique en donde esta data-task y me coloque el contenido html
   task.appendChild(taskContent);
+  task.appendChild(deleteIcon());// funcion de eliminar tarea-le pasamos los mismo del css estilo
   list.appendChild(task);
   //console.log(contenido)
 };
 
 btn.addEventListener("click", createTask);
 
-/*01 */
-/*<i class="far fa-check-square icon"> */
+
+
+
+
+/*exportado en la carpeta checkComplete.js */
+
+/*01
+//<i class="far fa-check-square icon">
 const checkComplete = () => {
   const i = document.createElement("i");
   i.classList.add("far", "fa-check-square", "icon"); //icon esta en el css
@@ -112,7 +122,7 @@ const checkComplete = () => {
   return i
 }
 
-/*funcion de nuestro cuadro check  para saber cuando esta marcado o desmarcado*/
+funcion de nuestro cuadro check  para saber cuando esta marcado o desmarcado
 const completeTask = (event) => {
   //console.log(event);//podemos ver cual es el elemento que esta tocando el usuario en la consola de navegador aparece como un objeto TARGET
   const element = event.target;
@@ -122,6 +132,27 @@ const completeTask = (event) => {
   element.classList.toggle('fas');//toggle nos permite saber cuando el usuario marca y desmarca el check osea me dice si esta activo o desactivo
   element.classList.toggle('completeIcon');//traemos esta propiedad desde el css
   element.classList.toggle('far'); //quitamos esta propiedad del icono anterior
-};
+};*/
+/*fin de la exportación checkComplete.js */
 
+
+
+/* exportamos hacia la carpeta deleteIcon.js
+//const contenido = `
+ //<i class="fas fa-trash-alt trashIcon icon"></i>`;
+const deleteIcon = () => {
+const i = document.createElement("i");
+i.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
+i.addEventListener("click", deleteTask)
+return i;
+}
+const deleteTask = (evento) =>{
+/*console.log("eliminar tarea")
+console.log(evento.target.parentElement);  //accedemos al evento y al target y luego al elemento padre. osea ruta del li para eliminar esa tarea
+
+const parent = evento.target.parentElement;
+//console.log(parent) verificamos si tenemos el elemento li
+parent.remove();
+}
+*/
 })() //immediately invoked function expression IIFE
