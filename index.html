@@ -29,22 +29,29 @@
               placeholder="Nombre de la tarea"
               class="inputForm"
               autocomplete="off"
-            />
-            <button type="submit" class="btnCreate">
+              data-form-input>
+            <!-- lo que yo le ponga despues del data ya se el nombre que yo quiera-->
+            <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
           </form>
         </div>
-        <ul class="cardsList">
-          <li class="card">
+                  <!-- lo que yo le ponga despues del data ya se el nombre que yo quiera-->
+        <ul class="cardsList" data-list>
+          <!-- lo que yo le ponga despues del data ya se el nombre que yo quiera-->
+          <!-- SE ELIMINO ESTA PARTE PARA AGREGAR EN EL LISTADO NUEVAS TAREAS TODO ESTO SE PASO A JAVASCRIPT-->
+          <!--
+            <li class="card" data-task>
             <div>
               <i class="far fa-check-square icon"></i>
               <span class="task">Hacer curso de DOM</span>
             </div>
             <i class="fas fa-trash-alt trashIcon icon"></i>
           </li>
+        -->
         </ul>
       </div>
     </main>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
